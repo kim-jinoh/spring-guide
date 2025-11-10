@@ -1,10 +1,11 @@
 package com.jokim.bean;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import com.jokim.bean.annotation.BBeanServiceAnnotation;
+
 @Component("bBeanService")
-@Qualifier("bBeanService")
+@BBeanServiceAnnotation
 public class BBeanService implements BeanService{
 
     @Override
