@@ -1,5 +1,8 @@
 package com.jokim.bean;
 
+import org.springframework.stereotype.Component;
+
+@Component("bBeanService")
 public class BBeanService implements BeanService{
 
     @Override
