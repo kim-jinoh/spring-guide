@@ -70,4 +70,14 @@ class DemoAppConfigTests {
         assertThat(useABeanQualifierService.getBeanService()).isInstanceOf(ABeanService.class);
         assertThat(useBBeanQualifierService.getBeanService()).isInstanceOf(BBeanService.class);
     }
+
+    @Test
+    @DisplayName("[Success]UsePrimaryBeanService 타입으로 꺼내기")
+    void getServiceByPrimary() {
+        // arrange & act
+        UsePrimaryBeanService usePrimaryBeanService = ac.getBean(UsePrimaryBeanService.class);
+
+        // assert
+        assertThat(usePrimaryBeanService.getQualifierService()).isInstanceOf(UseBBeanQualifierService.class);
+    }
 }
