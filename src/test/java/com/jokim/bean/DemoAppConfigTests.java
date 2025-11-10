@@ -80,4 +80,17 @@ class DemoAppConfigTests {
         // assert
         assertThat(usePrimaryBeanService.getQualifierService()).isInstanceOf(UseBBeanQualifierService.class);
     }
+
+    @Test
+    @DisplayName("[Success]UseAllBeanService List, Map 주입 테스트")
+    void getServiceByUseAllBeanService() {
+        // arrange & act
+        UseAllBeanService useAllBeanService = ac.getBean(UseAllBeanService.class);
+
+        // assert
+        assertThat(useAllBeanService).isInstanceOf(UseAllBeanService.class);
+        assertThat(useAllBeanService.getBeanServices()).hasSize(2);
+        assertThat(useAllBeanService.getBeanServiceByBeanName("aBeanService")).isInstanceOf(ABeanService.class);
+        assertThat(useAllBeanService.getBeanServiceByBeanName("bBeanService")).isInstanceOf(BBeanService.class);
+    }
 }
