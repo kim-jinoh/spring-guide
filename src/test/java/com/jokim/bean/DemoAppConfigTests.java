@@ -1,8 +1,5 @@
 package com.jokim.bean;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
-import java.util.List;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.*;
@@ -60,5 +57,17 @@ class DemoAppConfigTests {
         // assert
         assertThat(aBeanService).isInstanceOf(ABeanService.class);
         assertThat(bBeanService).isInstanceOf(BBeanService.class);
+    }
+
+    @Test
+    @DisplayName("[Success]UseABeanQualifierService, UseBBeanQualifierService 타입으로 꺼내기")
+    void getServiceByQualifier() {
+        // arrange & act
+        UseABeanQualifierService useABeanQualifierService = ac.getBean(UseABeanQualifierService.class);
+        UseBBeanQualifierService useBBeanQualifierService = ac.getBean(UseBBeanQualifierService.class);
+
+        // assert
+        assertThat(useABeanQualifierService.getBeanService()).isInstanceOf(ABeanService.class);
+        assertThat(useBBeanQualifierService.getBeanService()).isInstanceOf(BBeanService.class);
     }
 }
