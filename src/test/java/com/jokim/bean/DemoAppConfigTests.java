@@ -11,6 +11,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.jokim.DemoAppConfig;
+
 class DemoAppConfigTests {
 
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(DemoAppConfig.class);
