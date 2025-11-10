@@ -60,7 +60,7 @@ class DemoAppConfigTests {
     }
 
     @Test
-    @DisplayName("[Success]UseABeanQualifierService, UseBBeanQualifierService 타입으로 꺼내기")
+    @DisplayName("[Success]UseABeanQualifierService, UseBBeanQualifierService Qualifier 어노테이션으로 BeanService 주입")
     void getServiceByQualifier() {
         // arrange & act
         UseABeanQualifierService useABeanQualifierService = ac.getBean(UseABeanQualifierService.class);
@@ -72,7 +72,7 @@ class DemoAppConfigTests {
     }
 
     @Test
-    @DisplayName("[Success]UsePrimaryBeanService 타입으로 꺼내기")
+    @DisplayName("[Success]QualifierService 인터페이스 중 primary 등록된 서비스 주입")
     void getServiceByPrimary() {
         // arrange & act
         UsePrimaryBeanService usePrimaryBeanService = ac.getBean(UsePrimaryBeanService.class);
