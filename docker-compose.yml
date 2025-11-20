@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  dev:
+    image: gradle:9.1.0-jdk25
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace:delegated
+    ports:
+      - "8080:8080"
+    # Run bootRun by default inside the container using --no-daemon.
+    command: /bin/sh -c "chmod +x gradlew && ./gradlew --no-daemon bootRun"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+
