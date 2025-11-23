@@ -16,6 +16,6 @@ public class EventFormatter implements Formatter<ConvertedEventByFormatter>{
 
     @Override
     public String print(ConvertedEventByFormatter event, Locale locale) {
-        return evnet.toString();
+        return event.toString();
     }
 }
