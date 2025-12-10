@@ -1,0 +1,1 @@
+ALTER TABLE account ADD COLUMN age integer not null default 0;
